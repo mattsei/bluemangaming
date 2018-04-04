@@ -9,6 +9,23 @@
   </head>
 
   <body>
+
+
+    <% if user_signed_in? %>
+      <p> Logged in as: <%= current_user.email %></p>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <%= link_to 'User Settings', edit_user_registration_path %>
+      <%= link_to "Cancel my account", registration_path(:user), data: { confirm: "Are you sure?" }, method: :delete %>
+
+    <% else %>
+      <p>Not currently signed in</p>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Forgot your password?", new_user_password_path %>
+
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
