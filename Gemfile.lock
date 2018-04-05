@@ -72,8 +72,12 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23-x86-mingw32)
+    foundation-rails (5.4.5.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hiredis (0.6.1)
     i18n (1.0.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -125,6 +129,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.1)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -184,9 +189,12 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise (~> 4.4)
+  foundation-rails
+  hiredis (~> 0.6.1)
   jbuilder (~> 2.5)
   puma (~> 3.7)
   rails (~> 5.1.6)
+  redis (~> 4.0, >= 4.0.1)
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3

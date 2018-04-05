@@ -1,4 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%# <p id="notice"><%= notice </p> %>
+<div class="large-4 small-6 columns">
+  <img src="https://placehold.it/1000x1000&amp;text=Thumbnail">
+  <div class="panel">
+    <h5><%= link_to @game.name %></h5>
+    <h6 class="subheader">$<%= @game.price %></h6>
+    <h6 class="subheader"><%= @game.stock %> in stock</h6>
+    <%= render "game_row", game: @game, order_item: @order_item %>
+  </div>
+<%= link_to 'Edit', edit_game_path(@game) if current_user.try(:admin?) %>
+<%= link_to 'Delete', game_path(@game), method: :delete, data: {confirm: 'Are you sure?'} if current_user.try(:admin?) %>
 <%= link_to 'Back', games_path %>
+</div>

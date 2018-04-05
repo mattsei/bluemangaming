@@ -5,11 +5,13 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
+    @order_item = current_order.order_items.new
   end
 
   # GET /games/1
   # GET /games/1.json
   def show
+    @order_item = current_order.order_items.new
   end
 
   # GET /games/new
