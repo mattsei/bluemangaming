@@ -54,6 +54,7 @@ gem "devise", "~> 4.4"
 
 gem 'foundation-rails'
 
+gem 'rails_admin', '~> 1.2'
 # gem 'redis', '~> 4.0', '>= 4.0.1'
 # gem 'hiredis', '~> 0.6.1'
 

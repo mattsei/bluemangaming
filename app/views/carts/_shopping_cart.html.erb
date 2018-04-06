@@ -7,12 +7,13 @@
     </ul>
   </div>
 <% end %>
-<% if @order_items.count == 0 %>
+<% if @order.order_items.length == 0 %>
   <p class="text-center">
     There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
   </p>
 <% else %>
-  <% @order_items.each do |order_item| %>
+  <% @order.order_items.each do |order_item| %>
     <%= render 'carts/cart_row', game: order_item.game, order_item: order_item, show_total: true %>
   <% end %>
+  <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency @order.subtotal %></span></h4>
 <% end %>

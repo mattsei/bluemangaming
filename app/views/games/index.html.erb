@@ -18,12 +18,10 @@
 <body>
   <div class="row">
     <div class="large-12 columns">
-
       <div class="row">
         <div class="large-12 columns">
           <nav class="top-bar" data-topbar>
             <ul class="title-area">
-
               <li class="name">
                 <h1>
                   <a href="#">Blue Man Gaming</a>
@@ -36,38 +34,11 @@
               </li>
             </ul>
             <section class="top-bar-section">
-
               <ul class="right">
                 <li class="divider"></li>
                 <li class="has-dropdown">
                   <a href="#">Account</a>
                   <ul class="dropdown">
-                    <%# <li>
-                      <label>Section Name</label>
-                    </li>
-                    <li class="has-dropdown">
-                      <a class="" href="#">Has Dropdown, Level 1</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a href="#">Dropdown Options</a>
-                        </li>
-                        <li>
-                          <a href="#">Dropdown Options</a>
-                        </li>
-                        <li>
-                          <a href="#">Level 2</a>
-                        </li>
-                        <li>
-                          <a href="#">Subdropdown Option</a>
-                        </li>
-                        <li>
-                          <a href="#">Subdropdown Option</a>
-                        </li>
-                        <li>
-                          <a href="#">Subdropdown Option</a>
-                        </li>
-                      </ul>
-                    </li> %>
                     <% if signed_in? %>
                      <li>
                       <%= link_to current_user.email, edit_user_registration_path %>
@@ -83,47 +54,11 @@
                       <%= link_to 'Sign Up', new_user_registration_path %>
                     </li>
                     <% end %>
-                    <%# <li class="divider"></li>
-                    <li>
-                      <label>Section Name</label>
-                    </li>
-                    <li>
-                      <a href="#">Dropdown Option</a>
-                    </li>
-                    <li>
-                      <a href="#">Dropdown Option</a>
-                    </li>
-                    <li>
-                      <a href="#">Dropdown Option</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                      <a href="#">See all →</a>
-                    </li> %>
                   </ul>
                 </li>
                 <li class="divider"></li>
                 <li>
                   <a class="cart-text"><%= render 'layouts/cart_text' %></a>
-                </li>
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Cart</a>
-                  <ul class="dropdown">
-                    <li>
-                      <a href="#">Dropdown Option</a>
-                    </li>
-                    <li>
-                      <a href="#">Dropdown Option</a>
-                    </li>
-                    <li>
-                      <a href="#">Dropdown Option</a>
-                    </li>
-                    <%# <li class="divider"></li>
-                    <li>
-                      <a href="#">See all →</a>
-                    </li> %>
-                  </ul>
                 </li>
               </ul>
             </section>
@@ -131,7 +66,6 @@
         </div>
       </div>
       <div class="row">
-
         <div class="large-4 small-12 columns">
           <img src="https://placehold.it/500x500&amp;text=Logo">
           <div class="hide-for-small panel">
@@ -139,80 +73,22 @@
             <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare
               sagittis.</h5>
           </div>
-          <a href="#">
-            <div class="panel callout radius">
-              <h6>99&nbsp; items in your cart</h6>
-            </div>
-          </a>
         </div>
 
         <div class="large-8 columns">
           <div class="row">
           <% @games.limit(9).each do |game| %>
             <div class="large-4 small-6 columns">
-              <img src="https://placehold.it/1000x1000&amp;text=Thumbnail">
+              <%= link_to image_tag("https://placehold.it/1000x1000&amp;text=Thumbnail"), game %>
               <div class="panel">
                 <h5><%= link_to game.name, game %></h5>
-                <%# <ul class="inline-list"> %>
                   <h6 class="subheader">$<%= game.price %></h6>
                   <h6 class="subheader"><%= game.stock %> in stock</h6>
-                <%# </ul> %>
               </div>
             </div>
-            <%# <div class="large-4 small-6 columns">
-              <img src="https://placehold.it/500x500&amp;text=Thumbnail">
-              <div class="panel">
-                <h5></h5>
-                <h6 class="subheader">$000.00</h6>
-              </div>
-            </div>
-            <div class="large-4 small-6 columns">
-              <img src="https://placehold.it/500x500&amp;text=Thumbnail">
-              <div class="panel">
-                <h5></h5>
-                <h6 class="subheader">$000.00</h6>
-              </div>
-            </div>
-            <div class="large-4 small-6 columns">
-              <img src="https://placehold.it/500x500&amp;text=Thumbnail">
-              <div class="panel">
-                <h5></h5>
-                <h6 class="subheader">$000.00</h6>
-              </div>
-            </div>
-            <div class="large-4 small-6 columns">
-              <img src="https://placehold.it/500x500&amp;text=Thumbnail">
-              <div class="panel">
-                <h5></h5>
-                <h6 class="subheader">$000.00</h6>
-              </div>
-            </div>
-            <div class="large-4 small-6 columns">
-              <img src="https://placehold.it/500x500&amp;text=Thumbnail">
-              <div class="panel">
-                <h5></h5>
-                <h6 class="subheader">$000.00</h6>
-              </div> %>
               <% end %>
             </div>
           </div>
-
-          <%# <div class="row">
-            <div class="large-12 columns">
-              <div class="panel">
-                <div class="row">
-                  <div class="large-2 small-6 columns">
-                    <img src="https://placehold.it/300x300&amp;text=Site%20Owner">
-                  </div>
-                  <div class="large-10 small-6 columns">
-                    <strong>This Site Is Managed By</strong>
-                    <hr> Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio
-                    ornare sagittis
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> %>
         </div>
       </div>
       <footer class="row">
@@ -221,22 +97,6 @@
           <div class="row">
             <div class="large-6 columns">
               <p>© Copyright no one at all. Go to town.</p>
-            </div>
-            <div class="large-6 columns">
-              <ul class="inline-list right">
-                <li>
-                  <a href="#">Link 1</a>
-                </li>
-                <li>
-                  <a href="#">Link 2</a>
-                </li>
-                <li>
-                  <a href="#">Link 3</a>
-                </li>
-                <li>
-                  <a href="#">Link 4</a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
